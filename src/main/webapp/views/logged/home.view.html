@@ -1,0 +1,94 @@
+<div class="jumbotron jumbotron-fluid main-title"> 
+  <h2 class="component-holder text-left" xattr-position="text-left" data-component="crn-subtitle" id="crn-subtitle-814474">dropdown</h2> 
+</div> 
+
+
+ <!--Estilo dropdown-->
+<style>
+    .dropdown-submenu {
+        position: relative;
+}
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+}
+</style>
+
+
+   <!--Botão dropdown Começo-->
+<div class="container">
+  <h2>Mussum Ipsum, cacilds vidis.</h2>
+  <p>In this example, we have created a .dropdown-submenu class for multi-level dropdowns (see style section above).</p>
+  <p>>Mussum Ipsum, cacilds vidis.</p>                                        
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">lupuliz
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a tabindex="-1" href="#">cacilds</a></li>
+      <li><a tabindex="-1" href="#">gentis</a></li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">New dopiviss <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">vamivis dropivis divis</a></li>
+          <li><a tabindex="-1" href="#">vamivis dropivis trivisis</a></li>
+          <li class="dropdown-submenu">
+            <a class="test" href="#">cumpadi <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">vamivis dropivis divis</a></li>
+              <li><a href="#/home/logged/moreno">moreno</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+ <!--Botão dropdown Fim botao-->
+ 
+<div ui-view="" class="container-fluid main-view main-view-horizontal" data-container="true"> 
+</div>
+<div class="modal fade" id="modalPassword">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">{{"Home.view.ChangePassword" | translate}}</h4> 
+      </div>
+      <div class="modal-body"> 
+        <form class="form-validation" autocomplete="off" name="form" role="form"> 
+          <div class="text-danger wrapper text-center" ng-show="authError"> 
+          </div> 
+          <div class="list-group list-group-sm"> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control k-textbox" id="oldPassword" placeholder="{{'Home.view.Old Password' | translate}}" ng-required="true"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control k-textbox" id="newPassword" placeholder="{{'Home.view.New Password' | translate}}" ng-required="true"> 
+            </div> 
+            <div class="list-group-item"> 
+              <input type="password" class="form-control k-textbox" id="newPasswordConfirmation" placeholder="{{'Home.view.Confirmation' | translate}}" ng-required="true"> 
+            </div> 
+          </div> 
+        </form> 
+      </div> 
+      <div class="modal-footer"> 
+        <button class="btn btn-primary btn-fab k-button" type="submit" ng-click="changePassword()" ng-disabled="form.$invalid || vm.dataLoading"><span class="k-icon k-i-check"></span></button> 
+        <button class="btn btn-default btn-fab k-button" type="button" data-dismiss="modal"><span class="k-icon k-i-close"></span></button> 
+      </div> 
+    </div> 
+  </div> 
+</div>
+
+ <!--função dropdown-->
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
